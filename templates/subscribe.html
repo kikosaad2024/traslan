@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversion Successful!</h1>
+        <p>Your video has been converted successfully.</p>
+        <a href="{{ url_for('download_result', filename='output_video.mp4') }}">Download Converted Video</a>
+        <br>
+        <a href="{{ url_for('index') }}" class="back-link">Back to Home</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -2,25 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
+      "src": "app.py",
+      "use": "@vercel/python",
       "config": {
-        "distDir": "build"
+        "maxLambdaSize": "50mb"
       }
-    },
-    {
-      "src": "api/translate.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/translate.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "app.py"
     }
   ]
 }
